@@ -1,2 +1,5 @@
-package org.thetestingacademy.modules;public class PayloadManager {
+package org.thetestingacademy.modules;
+
+public class PayloadManager {
+    //Ser and Dser
 }

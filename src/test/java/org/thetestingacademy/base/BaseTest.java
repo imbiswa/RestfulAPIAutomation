@@ -1,2 +1,4 @@
-package org.thetestingacademy.base;public class BaseTest {
+package org.thetestingacademy.base;
+
+public class BaseTest {
 }

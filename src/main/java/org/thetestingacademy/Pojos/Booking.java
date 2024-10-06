@@ -74,4 +74,7 @@ public class Booking {
         this.additionalneeds = additionalneeds;
     }
 
+    public void setAdditonalneeds(String snacks) {
+
+    }
 }

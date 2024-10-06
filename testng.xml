@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/rnbis/IdeaProjects/RestfulAPIAutomation">
-        <classes><class name="org.thetestingacademy.tests.CRUD.testCreateBookingPOST">
-            <methods><include name="test_verify_create_post"/>
-            </methods>
+        <classes>
+            <class name="org.thetestingacademy.tests.CRUD.testCreateBookingPOST">
+
         </class>
         </classes>
     </test>

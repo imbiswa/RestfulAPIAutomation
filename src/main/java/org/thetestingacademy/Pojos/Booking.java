@@ -3,6 +3,7 @@ package org.thetestingacademy.Pojos;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import org.thetestingacademy.Pojos.BookingDates;
 
 
 public class Booking {
@@ -21,7 +22,7 @@ public class Booking {
     private Boolean depositpaid;
     @SerializedName("bookingdates")
     @Expose
-    private com.thetestingacademy.pojos.BookingDates bookingdates;
+    private BookingDates bookingdates;
     @SerializedName("additionalneeds")
     @Expose
     private String additionalneeds;
@@ -58,11 +59,11 @@ public class Booking {
         this.depositpaid = depositpaid;
     }
 
-    public com.thetestingacademy.pojos.BookingDates getBookingdates() {
+    public BookingDates getBookingdates() {
         return bookingdates;
     }
 
-    public void setBookingdates(com.thetestingacademy.pojos.BookingDates bookingdates) {
+    public void setBookingdates(BookingDates bookingdates) {
         this.bookingdates = bookingdates;
     }
 
@@ -74,7 +75,4 @@ public class Booking {
         this.additionalneeds = additionalneeds;
     }
 
-    public void setAdditonalneeds(String snacks) {
-
-    }
 }

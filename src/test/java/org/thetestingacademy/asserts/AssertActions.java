@@ -16,7 +16,7 @@ public class AssertActions {
     }
     public void verifyStatusCode(Response response , Integer expected)
     {
-        assertEquals(response , expected);
+        assertEquals(response.getStatusCode(), expected);
 
     }
 }

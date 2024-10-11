@@ -10,6 +10,9 @@ import org.testng.annotations.Test;
 import org.thetestingacademy.Pojos.BookingResponse;
 import org.thetestingacademy.base.BaseTest;
 import org.thetestingacademy.endpoints.APIConstants;
+import org.thetestingacademy.utils.PropertyReader;
+//import com.thetestingacademy.utils.PropertyReader;
+import static org.assertj.core.api.Assertions.*;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -33,7 +36,7 @@ public class testCreateBookingPOST extends BaseTest {
 
         validatableResponse =response.then().log().all();
 
-        validatableResponse.statusCode(200);
+        validatableResponse.statusCode(Integer.parseInt(PropertyReader.readKey("booking.post.statuscode.success")));
 
 //Default Rest Assured
         validatableResponse.body("booking.firstname" , Matchers.equalTo("Biswajit"));

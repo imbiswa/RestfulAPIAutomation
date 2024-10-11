@@ -1,15 +1,15 @@
-package com.thetestingacademy.pojos;
+package org.thetestingacademy.Pojos;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class BookingDates {
 
-    @SerializedName("checkin")
-    @Expose
+  //  @SerializedName("checkin")
+    //@Expose
     private String checkin;
-    @SerializedName("checkout")
-    @Expose
+   // @SerializedName("checkout")
+  //  @Expose
     private String checkout;
 
     public String getCheckin() {

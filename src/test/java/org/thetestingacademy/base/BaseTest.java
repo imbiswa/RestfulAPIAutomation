@@ -7,7 +7,9 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 import org.thetestingacademy.asserts.AssertActions;
 import org.thetestingacademy.endpoints.APIConstants;
 import org.thetestingacademy.modules.PayloadManager;
@@ -23,8 +25,9 @@ public class BaseTest {
     public Response response;
     public ValidatableResponse validatableResponse;
     //TC-Header
-    @BeforeTest
+    @BeforeClass
     public void setUp()
+
     {
         payloadManager =new PayloadManager();
         assertActions = new AssertActions();
@@ -49,10 +52,6 @@ public class BaseTest {
 
         // String Extraction
         String token = payloadManager.getTokeFromJson(response.asString());
-
-
-
-
-            return token;
+        return token;
     }
 }

@@ -8,23 +8,12 @@ import org.thetestingacademy.Pojos.BookingDates;
 
 public class Booking {
 
-    @SerializedName("firstname")
-    @Expose
+
     private String firstname;
-    @SerializedName("lastname")
-    @Expose
     private String lastname;
-    @SerializedName("totalprice")
-    @Expose
     private Integer totalprice;
-    @SerializedName("depositpaid")
-    @Expose
     private Boolean depositpaid;
-    @SerializedName("bookingdates")
-    @Expose
     private BookingDates bookingdates;
-    @SerializedName("additionalneeds")
-    @Expose
     private String additionalneeds;
 
     public String getFirstname() {

@@ -16,18 +16,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TC001_IntegrationFlow extends BaseTest {
 
-    @Test(groups = "integration", priority = 1)
+
+    @Test(groups = "integration",priority = 1)
     @Owner("Biswajit")
     @Description("TC#INT1 - Step 1. Verify that the Booking can be Created")
     public void testCreateBooking(ITestContext iTestContext){
         iTestContext.setAttribute("token", getToken());
         System.out.println("printing payload");
-        System.out.println(payloadManager.createpayloadasStringPost());
+        System.out.println(payloadManager.createPayloadasStringPost());
 
         requestSpecification.basePath(APIConstants.CREATE_UPDATE_BOOKING_URL);
         response = RestAssured
                 .given(requestSpecification)
-                .when().body(payloadManager.createpayloadasStringPost()).post();
+                .when().body(payloadManager.createPayloadasStringPost()).post();
 
         validatableResponse = response.then().log().all();
 
@@ -40,7 +41,7 @@ public class TC001_IntegrationFlow extends BaseTest {
         // AssertJ
         assertThat(bookingResponse.getBookingid()).isNotNull();
         assertThat(bookingResponse.getBooking().getFirstname()).isNotNull().isNotBlank();
-       assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo(PropertyReader.readKey("booking.post.firstname"));
+        assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo(PropertyReader.readKey("booking.post.firstname"));
         //  Set the booking ID
         iTestContext.setAttribute("bookingid", bookingResponse.getBookingid());
 

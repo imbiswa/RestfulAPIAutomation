@@ -9,7 +9,7 @@ public class PayloadManager {
     Gson gson;
 
 //converts a simple java object to jsonpayload-String
-    public String createpayloadasStringPost()
+    public String createPayloadasStringPost()
 
     {
 
@@ -29,8 +29,9 @@ public class PayloadManager {
 
         System.out.println(booking);
         //now Pojo or java object needs to ->convert to JSON string (byteStream) - Serialization
-        Gson gson = new Gson();
+        gson = new Gson();
         String post_payload = gson.toJson(booking);
+        System.out.println(post_payload);
         return post_payload;
     }
     public String createpayloadasStringPostFaker()

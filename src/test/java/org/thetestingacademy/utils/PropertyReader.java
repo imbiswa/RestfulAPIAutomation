@@ -17,7 +17,7 @@ public class PropertyReader {
 
         try {
 
-            FileInputStream file = new FileInputStream("src/test/java/org/thetestingacademy/utils/PropertyReader.java");
+            FileInputStream file = new FileInputStream("src/test/resources/data.properties");
             properties.load(file);
 
         } catch (Exception ex) {
@@ -35,7 +35,7 @@ public class PropertyReader {
 
         try {
 
-            FileInputStream file = new FileInputStream("src/test/java/org/thetestingacademy/utils/PropertyReader.java");
+            FileInputStream file = new FileInputStream("src/test/resources/data.properties");
             properties.load(file);
 
         } catch (Exception ex) {

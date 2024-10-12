@@ -31,12 +31,13 @@ public class testCreateBookingPOST extends BaseTest {
         requestSpecification.basePath(APIConstants.CREATE_UPDATE_BOOKING_URL);
         //
         response = RestAssured.given(requestSpecification)
-                        .when().body(payloadManager.createpayloadasStringPost())
+                        .when().body(payloadManager.createPayloadasStringPost())
                         .post();
 
         validatableResponse =response.then().log().all();
 
-        validatableResponse.statusCode(Integer.parseInt(PropertyReader.readKey("booking.post.statuscode.success")));
+        //validatableResponse.statusCode(Integer.parseInt(PropertyReader.readKey("booking.post.statuscode.success")));
+        validatableResponse.statusCode(200);
 
 //Default Rest Assured
         validatableResponse.body("booking.firstname" , Matchers.equalTo("Biswajit"));
@@ -45,7 +46,8 @@ public class testCreateBookingPOST extends BaseTest {
         BookingResponse bookingResponse =payloadManager.bookingResponseJava((response.asString()));
         assertThat(bookingResponse.getBooking()).isNotNull();
         assertThat(bookingResponse.getBooking().getFirstname()).isNotEmpty();
-        //assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo(PropertyReader.readKey("booking.post.firstname"));
+        System.out.println(bookingResponse.getBooking().getFirstname());
+        assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo(PropertyReader.readKey("booking.post.firstname"));
 
    //TestNG
 

@@ -5,11 +5,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class BookingDates {
 
-  //  @SerializedName("checkin")
-    //@Expose
+
     private String checkin;
-   // @SerializedName("checkout")
-  //  @Expose
     private String checkout;
 
     public String getCheckin() {

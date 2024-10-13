@@ -4,10 +4,8 @@
     <test verbose="2" preserve-order="true" name="C:/Users/rnbis/IdeaProjects/RestfulAPIAutomation">
         <classes>
 
-
             <class name="org.thetestingacademy.tests.e2eIntegration.TC001_IntegrationFlow"> </class>
             <class name="org.thetestingacademy.tests.e2eIntegration.TC002_IntegrationFlow"> </class>
-
 
 
         </classes>

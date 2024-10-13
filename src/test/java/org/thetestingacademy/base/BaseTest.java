@@ -7,11 +7,13 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.thetestingacademy.asserts.AssertActions;
 import org.thetestingacademy.endpoints.APIConstants;
+import org.thetestingacademy.listeners.ITestConextutils;
 import org.thetestingacademy.modules.PayloadManager;
 
 import java.lang.reflect.Type;
@@ -24,21 +26,28 @@ public class BaseTest {
     public JsonPath jsonPath;
     public Response response;
     public ValidatableResponse validatableResponse;
-    //TC-Header
-    @BeforeClass
-    public void setUp()
 
-    {
-        payloadManager =new PayloadManager();
+    //TC-Header
+
+    @BeforeClass
+    public void setUp(ITestContext context) {
+        payloadManager = new PayloadManager();
         assertActions = new AssertActions();
         requestSpecification = new RequestSpecBuilder()
                 .setBaseUri(APIConstants.BASE_URL)
-                .addHeader("Content-Type","application/json")
+                .addHeader("Content-Type", "application/json")
                 .build().log().all();
+        ITestConextutils.setTestContext(context);
+
+
 
     }
 
-    public String getToken() {
+
+
+
+
+        public String getToken() {
         requestSpecification = RestAssured
                 .given()
                 .baseUri(APIConstants.BASE_URL)
@@ -53,5 +62,8 @@ public class BaseTest {
         // String Extraction
         String token = payloadManager.getTokeFromJson(response.asString());
         return token;
+
     }
 }
+
+
